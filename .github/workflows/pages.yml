@@ -20,28 +20,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: "10.0.x"
-
-      - name: Publish Blazor WASM
-        run: >
-          dotnet publish
-          "Portfólio Brian/Portfólio Brian.Client/Portfólio Brian.Client.csproj"
-          -c Release
-          -o publish
-
-      - name: Prepare Pages
+      - name: Assemble static site
         env:
           REPO: ${{ github.event.repository.name }}
         run: |
-          touch publish/wwwroot/.nojekyll
-          sed -i "s|<base href=\"/\" />|<base href=\"/${REPO}/\" />|" publish/wwwroot/index.html
-          cp publish/wwwroot/index.html publish/wwwroot/404.html
+          mkdir -p public/js public/images
+          cp "Portfólio Brian/Portfólio Brian.Client/wwwroot/app.css" public/app.css
+          cp "Portfólio Brian/Portfólio Brian.Client/wwwroot/js/site.js" public/js/site.js
+          cp "Portfólio Brian/Portfólio Brian.Client/wwwroot/images/brian.png" public/images/brian.png
+          cp site/index.html public/index.html
+          sed -i "s|<base href=\"/\" />|<base href=\"/${REPO}/\" />|" public/index.html
+          cp public/index.html public/404.html
+          touch public/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: publish/wwwroot
+          path: public
 
   deploy:
     needs: build
