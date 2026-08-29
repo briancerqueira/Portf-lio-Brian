@@ -8,6 +8,8 @@
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <StaticWebAssetFingerprintingEnabled>false</StaticWebAssetFingerprintingEnabled>
+    <WasmFingerprintAssets>false</WasmFingerprintAssets>
   </PropertyGroup>
 
   <ItemGroup>
