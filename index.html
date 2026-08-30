@@ -1,44 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Brian Cerqueira — Full Stack Developer e analista de dados industriais. .NET, C#, JavaScript, PIMS, MES, PI System e Aspen InfoPlus.21." />
     <title>Brian Cerqueira | Full Stack &amp; Industrial Data</title>
-    <base href="/" />
+    <base href="./" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="Portfólio_Brian.Client.styles.css" />
     <link rel="icon" type="image/png" href="images/brian.png" />
-    <style>
-        html, body, #app {
-            margin: 0;
-            min-height: 100vh;
-            background: #050910;
-            color: #eef4ff;
-            font-family: Outfit, "Segoe UI", sans-serif;
-        }
-        .boot {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #93a4c0;
-            font-size: 0.82rem;
-        }
-    </style>
 </head>
-
 <body>
-    <div id="app">
-        <div class="boot">Brian Cerqueira</div>
+    <div class="site">
+        <div class="fx" aria-hidden="true">
+            <canvas id="bg-particles"></canvas>
+            <div class="fx-grid"></div>
+            <div class="fx-orb fx-orb-a"></div>
+            <div class="fx-orb fx-orb-b"></div>
+            <div class="fx-scan"></div>
+        </div>
+
+        <header class="topnav">
+            <a class="brand" href="#inicio" data-nav-link>
+                <span class="brand-mark">BC</span>
+                <span class="brand-text">
+                    <strong>Brian Cerqueira</strong>
+                    <span>Portfolio</span>
+                </span>
+            </a>
+            <input id="nav-toggle" type="checkbox" />
+            <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu"><span></span></label>
+            <nav class="nav-links" aria-label="Seções">
+                <a href="#inicio" data-nav-link>Início</a>
+                <a href="#sobre" data-nav-link>Sobre</a>
+                <a href="#stack" data-nav-link>Stack</a>
+                <a href="#industria" data-nav-link>Indústria</a>
+                <a href="#contato" data-nav-link>Contato</a>
+                <a class="btn btn-lime" href="https://wa.me/5521992550986" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero wrap" id="inicio">
+                <div>
+                    <p class="kicker">Online · Niterói, RJ</p>
+                    <h1>Brian Cerqueira</h1>
+                    <p class="role-line"><span data-role-rotator>Full Stack Developer</span></p>
+                    <p class="lead">
+                        Desenvolvedor de software e analista de dados industriais. Crio aplicações web
+                        e apps mobile (Android e iOS), e transformo desafios do chão de fábrica — PIMS,
+                        MES e MOM — em sistemas estáveis, visibilidade operacional e resultado.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-lime" href="https://wa.me/5521992550986" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+                        <a class="btn btn-cyan" href="https://www.linkedin.com/in/briancerqueira/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a class="btn btn-ghost" href="#industria">Ver expertise</a>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">C# / .NET</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">Web</span>
+                        <span class="chip">Android</span>
+                        <span class="chip">iOS</span>
+                        <span class="chip">PI System</span>
+                        <span class="chip">Aspen IP.21</span>
+                        <span class="chip">PIMS · MES · MOM</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">Azure DevOps</span>
+                    </div>
+                </div>
+                <div class="portrait-wrap">
+                    <div class="portrait-ring" aria-hidden="true"></div>
+                    <figure class="portrait">
+                        <img src="images/brian.png" alt="Foto de Brian Cerqueira" width="760" height="760" />
+                        <figcaption class="portrait-meta">Full Stack · Industrial Data</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="block" id="sobre">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-index">01 — Sobre</div>
+                            <h2>Software + operação industrial</h2>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <article class="card prose">
+                            <h3>Quem eu sou</h3>
+                            <p>Olá! Sou Brian, tenho 22 anos e sou desenvolvedor de software. Moro em Niterói. Sou formado em Análise e Desenvolvimento de Sistemas e curso uma pós-graduação em IA para Desenvolvedores, com o objetivo de integrar inteligência artificial e automação avançada às soluções que entrego.</p>
+                            <p>Minha trajetória é focada no setor industrial e petroquímico: transformar desafios complexos em eficiência operacional e inovação.</p>
+                        </article>
+                        <article class="card prose">
+                            <h3>Como eu entrego</h3>
+                            <p>Identifico e corrijo bugs com testes unitários e de integração. Trabalho com .NET, C#, Entity Framework e JavaScript, com foco em arquiteturas escaláveis. Desenvolvo aplicações web e aplicativos mobile para Android e iOS.</p>
+                            <p>Domínio de Oracle e SQL Server, usando Azure DevOps para o ciclo de vida do desenvolvimento e documentação técnica. Acredito no poder transformador da tecnologia — e aplico isso para otimizar processos industriais.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block" id="stack">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-index">02 — Stack</div>
+                            <h2>Ferramentas do dia a dia</h2>
+                        </div>
+                    </div>
+                    <div class="skill-grid">
+                        <article class="card">
+                            <h3>Desenvolvimento de software</h3>
+                            <p>Web, mobile, backend e ciclo de vida com qualidade de entrega.</p>
+                            <div class="skill-list">
+                                <div class="skill-item"><span>C# / .NET</span><small>CORE</small></div>
+                                <div class="skill-item"><span>Aplicações web</span><small>WEB</small></div>
+                                <div class="skill-item"><span>Android &amp; iOS</span><small>MOBILE</small></div>
+                                <div class="skill-item"><span>JavaScript</span><small>FRONT</small></div>
+                                <div class="skill-item"><span>Entity Framework</span><small>DATA</small></div>
+                                <div class="skill-item"><span>Oracle &amp; SQL Server</span><small>DB</small></div>
+                                <div class="skill-item"><span>Azure DevOps</span><small>ALM</small></div>
+                                <div class="skill-item"><span>Scripts e repositórios</span><small>DEV</small></div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <h3>Dados industriais</h3>
+                            <p>Camada PIMS, execução de manufatura e visualização de processo.</p>
+                            <div class="skill-list">
+                                <div class="skill-item"><span>MES &amp; MOM</span><small>OPS</small></div>
+                                <div class="skill-item"><span>PIMS</span><small>LAYER</small></div>
+                                <div class="skill-item"><span>Aspen InfoPlus.21</span><small>HIST</small></div>
+                                <div class="skill-item"><span>OSIsoft PI System</span><small>HIST</small></div>
+                                <div class="skill-item"><span>PI AF / Event Frames</span><small>AF</small></div>
+                                <div class="skill-item"><span>PI Vision</span><small>UI</small></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block" id="industria">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-index">03 — Indústria</div>
+                            <h2>PIMS, MES e confiabilidade</h2>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <article>
+                            <div class="when">MES / MOM</div>
+                            <div>
+                                <h3>Sistemas de suporte industrial</h3>
+                                <p>Desenvolvimento e aprimoramento de Manufacturing Execution Systems e Manufacturing Operations Management — da estabilidade da aplicação à operação do processo.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="when">Aspen IP.21</div>
+                            <div>
+                                <h3>InfoPlus.21 no dia a dia</h3>
+                                <p>Atuo na operação e na sustentação do IP.21: análise de falhas de coleta e de histórico, correção de desvios e restabelecimento do sistema quando a planta para de gravar dados. Faço gestão de filesets — restauração, inserção e organização — e criação de tabelas de tags para manter o dicionário de processo alinhado à realidade do campo.</p>
+                                <p>Cadastro e ajuste de cálculos no AspenCalc, desenvolvimento e correção de scripts (incluindo SQL*Plus) para consulta, manutenção e automação de tarefas no historiador. Quando necessário, conduzo recuperação de sistema com partida a limpo para voltar a coleta ao ar com consistência.</p>
+                                <p>Também crio e organizo repositórios, padronizo scripts e documentações para o time versionar, reproduzir e evoluir o que foi entregue — no IP.21 e no desenvolvimento em geral.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div class="when">PI System</div>
+                            <div>
+                                <h3>Coleta, AF e visualização</h3>
+                                <p>Gestão de coleta com criação e redistribuição de scan class (PI ICU) e análise de falhas. Em PI AF: elementos, atributos, templates, análises (incluindo backfill), event frames e notificações. Migração de telas do PI ProcessBook para PI Vision, desenvolvimento de novas telas e administração do PI Vision (verificação de conexões via ADM).</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="block" id="contato">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-index">04 — Contato</div>
+                            <h2>Vamos conversar</h2>
+                        </div>
+                    </div>
+                    <div class="contact-panel">
+                        <div class="prose">
+                            <p>Se o seu desafio envolve aplicação web, app Android/iOS, software industrial, histórico de processo, MES ou um sistema .NET que precisa ficar estável, me chama.</p>
+                            <p>WhatsApp: <strong>(21) 99255-0986</strong><br />
+                            LinkedIn: <a href="https://www.linkedin.com/in/briancerqueira/" target="_blank" rel="noopener noreferrer">linkedin.com/in/briancerqueira</a></p>
+                        </div>
+                        <div class="contact-actions">
+                            <a class="btn btn-lime" href="https://wa.me/5521992550986" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+                            <a class="btn btn-cyan" href="https://www.linkedin.com/in/briancerqueira/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+                            <a class="btn btn-ghost" href="tel:+5521992550986">Ligar agora</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <span>© 2026 Brian Cerqueira</span>
+            <span>Full Stack · Dados industriais · Niterói, RJ</span>
+        </footer>
+
+        <a class="wa-float" href="https://wa.me/5521992550986" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+            </svg>
+        </a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
     <script src="js/site.js"></script>
 </body>
-
 </html>
